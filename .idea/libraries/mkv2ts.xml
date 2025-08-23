@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mkv2ts">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/mkv2ts_jar/mkv2ts.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
