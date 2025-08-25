@@ -71,6 +71,7 @@ public class TsMuxer {
         return out;
     }
 
+
     public static void convert(Path tsMuxerEXE, Path metaFile, Path output) throws IOException, InterruptedException {
         ProcessBuilder pb = new ProcessBuilder(tsMuxerEXE.toString(),
                 metaFile.toString(),
@@ -81,6 +82,18 @@ public class TsMuxer {
         pb.redirectOutput(logPath.toFile()); // or a temp file
 
         Process p = pb.start();
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            if (p.isAlive()) {
+                p.destroy();
+                try {
+                    if (!p.waitFor(2, java.util.concurrent.TimeUnit.SECONDS)) {
+                        p.destroyForcibly();
+                    }
+                } catch (InterruptedException ignored) {}
+            }
+        }));
+
         try { p.getOutputStream().close(); } catch (Exception ignore) {}
         int code = p.waitFor();
 

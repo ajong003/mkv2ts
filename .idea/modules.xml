@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/mkv2ts2.iml" filepath="$PROJECT_DIR$/mkv2ts2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mkv2ts.iml" filepath="$PROJECT_DIR$/mkv2ts.iml" />
     </modules>
   </component>
 </project>

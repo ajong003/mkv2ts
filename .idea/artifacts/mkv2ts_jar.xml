@@ -2,9 +2,6 @@
   <artifact type="jar" name="mkv2ts:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/mkv2ts_jar</output-path>
     <root id="archive" name="mkv2ts.jar">
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
-      </element>
       <element id="module-output" name="mkv2ts" />
     </root>
   </artifact>
